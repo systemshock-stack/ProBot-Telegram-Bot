@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProBot - Professional Telegram Bot Package | Ready to Sell</title>
+    <meta name="description" content="Complete Telegram bot package with source code, documentation, and support. Perfect for developers and entrepreneurs. Ready to deploy and resell.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #f8f9fa;
+            --accent: #6366f1;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --border: #e5e7eb;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-primary);
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .price-card {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .price-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: left 0.5s;
+        }
+        
+        .price-card:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #8b5cf6);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        .btn-success {
+            background: linear-gradient(135deg, var(--success), #059669);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+        
+        .demo-section {
+            background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+        }
+        
+        .stats-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-robot text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-display font-bold text-xl text-gray-900">ProBot</h1>
+                        <p class="text-xs text-gray-500">Professional Telegram Bot</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Features</a>
+                    <a href="#demo" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Demo</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Pricing</a>
+                    <a href="#support" class="text-gray-600 hover:text-indigo-600 font-medium transition-colors">Support</a>
+                    <button onclick="scrollToPurchase()" class="btn-primary text-white px-6 py-2 rounded-lg font-semibold">
+                        Buy Now
+                    </button>
+                </div>
+                <button class="md:hidden p-2">
+                    <i class="fas fa-bars text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div class="inline-flex items-center bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                        <div class="pulse-dot w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                        <span class="text-sm font-medium">Ready to Deploy • 30-Min Setup</span>
+                    </div>
+                    <h1 class="font-display text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Professional Telegram Bot
+                        <span class="block text-yellow-300">Package</span>
+                    </h1>
+                    <p class="text-xl text-white/90 mb-8 leading-relaxed">
+                        Complete, ready-to-sell Telegram bot with source code, documentation, and support. 
+                        Perfect for developers and entrepreneurs looking to start their bot business.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <button onclick="scrollToPurchase()" class="btn-success text-white px-8 py-4 rounded-xl font-bold text-lg">
+                            <i class="fas fa-shopping-cart mr-2"></i>
+                            Get Package - £120
+                        </button>
+                        <a href="#demo" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transition-all">
+                            <i class="fas fa-play mr-2"></i>
+                            See Demo
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-6 text-white/80">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>Source Code Included</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>30-Min Support</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-400 mr-2"></i>
+                            <span>Resale Rights</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="floating-element glass-card rounded-2xl p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-robot text-white text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-gray-900">ProBot</h3>
+                                    <p class="text-sm text-gray-500">Online</p>
+                                </div>
+                            </div>
+                            <div class="flex space-x-1">
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="bg-gray-100 rounded-lg p-3">
+                                <p class="text-sm text-gray-700">/start</p>
+                            </div>
+                            <div class="bg-blue-100 rounded-lg p-3 ml-8">
+                                <p class="text-sm text-gray-700">🤖 Welcome to ProBot! Your professional assistant is ready to help.</p>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-3">
+                                <p class="text-sm text-gray-700">What can you do?</p>
+                            </div>
+                            <div class="bg-blue-100 rounded-lg p-3 ml-8">
+                                <p class="text-sm text-gray-700">I have AI chat, file processing, user management, analytics, and admin tools!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Analysis Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">
+                    The Telegram Bot Market Opportunity
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Telegram bots are in high demand. Custom development costs £150-£500 on Fiverr. 
+                    Get a professional package for a fraction of the cost and sell unlimited copies.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="stats-card rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-pound-sign text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">£150-£500</h3>
+                    <p class="text-gray-600">Custom Bot Cost on Fiverr</p>
+                </div>
+                
+                <div class="stats-card rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">16 Days</h3>
+                    <p class="text-gray-600">Average Development Time</p>
+                </div>
+                
+                <div class="stats-card rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-900 mb-2">73%</h3>
+                    <p class="text-gray-600">Businesses Planning Bot Implementation</p>
+                </div>
+            </div>
+            
+            <div class="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="font-display text-2xl font-bold text-gray-900 mb-4">
+                            Why This Package is a Game-Changer
+                        </h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Ready-to-deploy professional code</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Complete documentation included</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>Sell unlimited copies at your price</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                                <span>30-minute setup support included</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white rounded-xl p-6 shadow-lg">
+                            <h4 class="font-bold text-gray-900 mb-2">Your Profit Potential</h4>
+                            <div class="text-3xl font-bold text-green-600 mb-2">£380+</div>
+                            <p class="text-sm text-gray-600">Profit per sale vs custom development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">
+                    Everything You Need to Start Selling
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Professional-grade Telegram bot with all features businesses need. 
+                    Complete package ready for immediate deployment and resale.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Core Features -->
+                <div class="feature-card bg-white rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-brain text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Smart AI Chat</h3>
+                    <p class="text-gray-600 mb-4">Intelligent conversation system with context-aware responses and smart message handling.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Natural language processing</li>
+                        <li>• Context-aware conversations</li>
+                        <li>• Multi-language support</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card bg-white rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-file-upload text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">File Processing</h3>
+                    <p class="text-gray-600 mb-4">Handle photos, documents, and media files with automatic processing and analysis.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Photo analysis and processing</li>
+                        <li>• Document text extraction</li>
+                        <li>• File conversion capabilities</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card bg-white rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">User Management</h3>
+                    <p class="text-gray-600 mb-4">Complete user system with registration, profiles, and activity tracking.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• User registration system</li>
+                        <li>• Profile management</li>
+                        <li>• Activity monitoring</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card bg-white rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-bar text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Analytics Dashboard</h3>
+                    <p class="text-gray-600 mb-4">Real-time statistics and performance metrics with comprehensive reporting.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Usage statistics</li>
+                        <li>• Performance metrics</li>
+                        <li>• Custom reports</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card bg-white rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Security System</h3>
+                    <p class="text-gray-600 mb-4">Built-in security with rate limiting, spam protection, and admin controls.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• Rate limiting protection</li>
+                        <li>• Spam detection</li>
+                        <li>• Admin validation</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-card bg-white rounded-2xl p-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-cyan-600 rounded-xl flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Admin Panel</h3>
+                    <p class="text-gray-600 mb-4">Comprehensive admin dashboard for bot management and monitoring.</p>
+                    <ul class="text-sm text-gray-500 space-y-1">
+                        <li>• User management</li>
+                        <li>• System monitoring</li>
+                        <li>• Configuration panel</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bot Types -->
+            <div class="mt-16">
+                <h3 class="font-display text-3xl font-bold text-gray-900 text-center mb-8">
+                    Pre-Configured Bot Types
+                </h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                        <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-building text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Business Bot</h4>
+                        <p class="text-gray-600 mb-4">Perfect for customer support, automation, and business processes.</p>
+                        <div class="text-sm text-gray-500">
+                            <p>✓ Customer support features</p>
+                            <p>✓ File processing</p>
+                            <p>✓ Analytics dashboard</p>
+                            <p>✓ Admin controls</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                        <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Community Bot</h4>
+                        <p class="text-gray-600 mb-4">Ideal for group management, moderation, and community engagement.</p>
+                        <div class="text-sm text-gray-500">
+                            <p>✓ Group management</p>
+                            <p>✓ Moderation tools</p>
+                            <p>✓ User tracking</p>
+                            <p>✓ Welcome messages</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                        <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mb-4">
+                            <i class="fas fa-rocket text-white text-xl"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-gray-900 mb-3">Simple Bot</h4>
+                        <p class="text-gray-600 mb-4">Lightweight bot with essential features for basic automation needs.</p>
+                        <div class="text-sm text-gray-500">
+                            <p>✓ Basic commands</p>
+                            <p>✓ Smart responses</p>
+                            <p>✓ Easy setup</p>
+                            <p>✓ Minimal resources</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="py-16 demo-section">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">
+                    See It In Action
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Professional bot interface with comprehensive features and clean user experience.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Easy Setup Process</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Get Bot Token</h4>
+                                <p class="text-gray-600">Create bot with @BotFather on Telegram</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Configure Settings</h4>
+                                <p class="text-gray-600">Add token to .env file and customize</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Run & Deploy</h4>
+                                <p class="text-gray-600">Start bot and deploy to production</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-semibold text-gray-900 mb-4">What's Included:</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center">
+                                <i class="fas fa-code text-blue-500 mr-2"></i>
+                                <span class="text-gray-700">Complete Source Code</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-book text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Setup Documentation</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-cog text-purple-500 mr-2"></i>
+                                <span class="text-gray-700">Configuration Files</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-headset text-orange-500 mr-2"></i>
+                                <span class="text-gray-700">30-Min Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 shadow-lg">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-gray-900">Code Example</h3>
+                        <span class="text-sm text-gray-500">telegram_bot.py</span>
+                    </div>
+                    <div class="code-block">
+<pre><code>class TelegramBot:
+    """Professional Telegram Bot with advanced features"""
+    
+    def __init__(self, token: str):
+        self.token = token
+        self.application = Application.builder().token(token).build()
+        self.user_data: Dict[int, Dict] = {}
+        self.setup_handlers()
+    
+    def setup_handlers(self):
+        """Setup all bot handlers"""
+        self.application.add_handler(CommandHandler("start", self.start_command))
+        self.application.add_handler(CommandHandler("help", self.help_command))
+        self.application.add_handler(CommandHandler("admin", self.admin_command))
+        # ... more handlers
+    
+    async def start_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+        """Handle /start command with welcome message"""
+        welcome_message = """
+🤖 &lt;b&gt;Welcome to ProBot!&lt;/b&gt;
+
+Hello! I'm your professional Telegram bot with advanced features.
+
+What I can do for you:
+✅ Smart conversation AI
+✅ File processing &amp; analysis  
+✅ User management system
+✅ Analytics &amp; reporting
+✅ Admin panel
+        """
+        await update.message.reply_html(welcome_message)
+</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">
+                    Professional Package Deal
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Everything you need to start selling Telegram bots immediately. 
+                    One-time purchase with unlimited resale rights.
+                </p>
+            </div>
+            
+            <div class="flex justify-center">
+                <div class="price-card bg-gradient-to-br from-indigo-50 to-purple-50 rounded-3xl p-8 border-2 border-indigo-200 max-w-md w-full">
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center bg-indigo-100 text-indigo-800 rounded-full px-4 py-2 text-sm font-medium mb-4">
+                            <i class="fas fa-star mr-2"></i>
+                            Professional Package
+                        </div>
+                        <div class="mb-6">
+                            <span class="text-5xl font-bold text-gray-900">£120</span>
+                            <span class="text-gray-600 ml-2">one-time</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Complete Telegram bot package with everything included</p>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Complete Source Code</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Professional Documentation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Setup Instructions</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Configuration Files</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">30-Minute Support Session</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Resale Rights Included</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Lifetime Updates</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span class="text-gray-700">Commercial License</span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button onclick="openPurchaseModal()" class="btn-primary w-full text-white py-4 rounded-xl font-bold text-lg mb-4">
+                            <i class="fas fa-shopping-cart mr-2"></i>
+                            Get Package Now
+                        </button>
+                        <p class="text-sm text-gray-500">
+                            <i class="fas fa-shield-alt mr-1"></i>
+                            Secure payment • Instant download
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Value Comparison -->
+            <div class="mt-16 bg-gray-50 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">Why This Package is Unbeatable Value</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-4">Custom Development Costs:</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Basic bot development</span>
+                                <span class="font-semibold text-gray-900">£2,000-£10,000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">AI-powered features</span>
+                                <span class="font-semibold text-gray-900">£8,000-£20,000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">File processing</span>
+                                <span class="font-semibold text-gray-900">£3,000-£8,000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Admin dashboard</span>
+                                <span class="font-semibold text-gray-900">£5,000-£15,000</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-600 font-semibold">Total Development Cost</span>
+                                <span class="font-bold text-red-600 text-lg">£18,000-£53,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900 mb-4">Your Package Includes:</h4>
+                        <div class="space-y-3">
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Professional source code</span>
+                                <span class="font-semibold text-green-600">✓ Included</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Complete documentation</span>
+                                <span class="font-semibold text-green-600">✓ Included</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">Setup instructions</span>
+                                <span class="font-semibold text-green-600">✓ Included</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2 border-b border-gray-200">
+                                <span class="text-gray-600">30-min support</span>
+                                <span class="font-semibold text-green-600">✓ Included</span>
+                            </div>
+                            <div class="flex justify-between items-center py-2">
+                                <span class="text-gray-600 font-semibold">Package Price</span>
+                                <span class="font-bold text-green-600 text-lg">£120 Only</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <div class="inline-flex items-center bg-green-100 text-green-800 rounded-full px-6 py-3 font-semibold">
+                        <i class="fas fa-calculator mr-2"></i>
+                        Save 99.3% vs Custom Development!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">
+                    Complete Support Package
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    We don't just sell code - we ensure your success with comprehensive support and documentation.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-book text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Documentation</h3>
+                    <p class="text-gray-600">Complete setup guides, API references, and customization instructions.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-headset text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">30-Min Support</h3>
+                    <p class="text-gray-600">Personal setup assistance and troubleshooting via video call or chat.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-rocket text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Quick Setup</h3>
+                    <p class="text-gray-600">Get your bot running in under 30 minutes with our automated setup.</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-6 text-center">
+                    <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-sync text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Lifetime Updates</h3>
+                    <p class="text-gray-600">Free updates and improvements to keep your bot current and secure.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 bg-white rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-gray-900 text-center mb-8">What Our Customers Say</h3>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                        <p class="text-gray-600 mb-3">"Saved me weeks of development time. The code is clean and well-documented."</p>
+                        <p class="font-semibold text-gray-900">Alex Chen</p>
+                        <p class="text-sm text-gray-500">Freelance Developer</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                        <p class="text-gray-600 mb-3">"Perfect package for starting my bot business. Already made 3 sales!"</p>
+                        <p class="font-semibold text-gray-900">Sarah Johnson</p>
+                        <p class="text-sm text-gray-500">Entrepreneur</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-gray-300 rounded-full mx-auto mb-4"></div>
+                        <p class="text-gray-600 mb-3">"Professional quality at an unbeatable price. Highly recommended!"</p>
+                        <p class="font-semibold text-gray-900">Mike Rodriguez</p>
+                        <p class="text-sm text-gray-500">Digital Agency Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-display text-4xl font-bold text-gray-900 mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600">
+                    Everything you need to know about the ProBot package.
+                </p>
+            </div>
+            
+            <div class="space-y-6">
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">What exactly do I get with this package?</h3>
+                    <p class="text-gray-600">You get the complete source code for a professional Telegram bot, comprehensive documentation, setup instructions, configuration files, 30-minute support session, and unlimited resale rights.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Can I really sell unlimited copies?</h3>
+                    <p class="text-gray-600">Yes! You get full commercial and resale rights. Sell as many copies as you want at whatever price you choose. Keep 100% of the profits.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">How long does setup take?</h3>
+                    <p class="text-gray-600">Most users get their bot running in 15-30 minutes. The package includes automated setup scripts and detailed instructions. Plus, you get 30 minutes of support if needed.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Do I need programming experience?</h3>
+                    <p class="text-gray-600">Basic computer skills are enough. The setup process is designed to be beginner-friendly with step-by-step instructions. No advanced programming knowledge required.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">What if I need help after purchase?</h3>
+                    <p class="text-gray-600">You get 30 minutes of dedicated support included. This can be via video call, chat, or email - whatever works best for you. Additional support available if needed.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-2xl p-6">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Can I customize the bot for my needs?</h3>
+                    <p class="text-gray-600">Absolutely! The code is well-documented and easy to modify. You can add features, change responses, modify the interface, and customize everything to match your requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Purchase CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-indigo-600 to-purple-700">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-display text-4xl font-bold text-white mb-6">
+                Ready to Start Your Bot Business?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                Get the complete professional Telegram bot package today and start selling immediately. 
+                Everything included - no hidden costs, no monthly fees.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+                <button onclick="openPurchaseModal()" class="bg-white text-indigo-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all">
+                    <i class="fas fa-shopping-cart mr-2"></i>
+                    Get Package - £120
+                </button>
+                <button onclick="openContactModal()" class="bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/30 transition-all">
+                    <i class="fas fa-comments mr-2"></i>
+                    Ask Questions
+                </button>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
+                <div class="flex items-center">
+                    <i class="fas fa-shield-alt mr-2"></i>
+                    <span>Secure Payment</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-download mr-2"></i>
+                    <span>Instant Download</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-headset mr-2"></i>
+                    <span>Support Included</span>
+                </div>
+                <div class="flex items-center">
+                    <i class="fas fa-sync mr-2"></i>
+                    <span>Lifetime Updates</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-robot text-white text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-display font-bold text-xl">ProBot</h3>
+                            <p class="text-sm text-gray-400">Professional Telegram Bot</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Complete Telegram bot package for developers and entrepreneurs. Start your bot business today.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Package</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>Source Code</li>
+                        <li>Documentation</li>
+                        <li>Setup Guide</li>
+                        <li>Support Included</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Features</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>AI Chat System</li>
+                        <li>File Processing</li>
+                        <li>User Management</li>
+                        <li>Admin Panel</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Support</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>30-Min Setup Help</li>
+                        <li>Lifetime Updates</li>
+                        <li>Commercial License</li>
+                        <li>Resale Rights</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 ProBot Package. Professional Telegram Bot Solution. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Purchase Modal -->
+    <div id="purchaseModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-shopping-cart text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Complete Your Purchase</h3>
+                <p class="text-gray-600">Professional Telegram Bot Package</p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-4 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-gray-700">ProBot Package</span>
+                    <span class="font-semibold text-gray-900">£120.00</span>
+                </div>
+                <div class="flex justify-between items-center text-sm text-gray-500">
+                    <span>Includes all features, support, and resale rights</span>
+                </div>
+                <div class="border-t border-gray-200 mt-4 pt-4">
+                    <div class="flex justify-between items-center">
+                        <span class="font-semibold text-gray-900">Total</span>
+                        <span class="font-bold text-2xl text-gray-900">£120.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="space-y-4 mb-6">
+                <button onclick="processPayment('paypal')" class="w-full bg-blue-500 text-white py-3 rounded-xl font-semibold hover:bg-blue-600 transition-colors">
+                    <i class="fab fa-paypal mr-2"></i>
+                    Pay with PayPal
+                </button>
+                <button onclick="processPayment('crypto')" class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors">
+                    <i class="fab fa-bitcoin mr-2"></i>
+                    Pay with Crypto
+                </button>
+                <button onclick="processPayment('bank')" class="w-full bg-gray-600 text-white py-3 rounded-xl font-semibold hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-university mr-2"></i>
+                    Bank Transfer
+                </button>
+            </div>
+            
+            <div class="text-center">
+                <button onclick="closePurchaseModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times mr-2"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-8">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-comments text-white text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">Get in Touch</h3>
+                <p class="text-gray-600">Questions about the ProBot package?</p>
+            </div>
+            
+            <div class="space-y-4 mb-6">
+                <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                    <i class="fas fa-envelope text-blue-500 text-xl mr-4"></i>
+                    <div>
+                        <p class="font-semibold text-gray-900">Email Support</p>
+                        <p class="text-gray-600 text-sm">support@probot.com</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                    <i class="fas fa-clock text-green-500 text-xl mr-4"></i>
+                    <div>
+                        <p class="font-semibold text-gray-900">Response Time</p>
+                        <p class="text-gray-600 text-sm">Within 24 hours</p>
+                    </div>
+                </div>
+                <div class="flex items-center p-4 bg-gray-50 rounded-xl">
+                    <i class="fas fa-headset text-purple-500 text-xl mr-4"></i>
+                    <div>
+                        <p class="font-semibold text-gray-900">Live Chat</p>
+                        <p class="text-gray-600 text-sm">Available during business hours</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button onclick="closeContactModal()" class="btn-primary text-white px-6 py-3 rounded-xl font-semibold">
+                    <i class="fas fa-times mr-2"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling
+        function scrollToPurchase() {
+            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal functions
+        function openPurchaseModal() {
+            document.getElementById('purchaseModal').classList.remove('hidden');
+        }
+
+        function closePurchaseModal() {
+            document.getElementById('purchaseModal').classList.add('hidden');
+        }
+
+        function openContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+        }
+
+        // Payment processing
+        function processPayment(method) {
+            alert(`Redirecting to ${method.toUpperCase()} payment...\n\nThis is a demo. In a real implementation, you would integrate with actual payment processors like PayPal, Stripe, or crypto payment gateways.`);
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                alert('Thank you for your purchase! 🎉\n\nIn a real implementation, you would receive:\n• Download link for the package\n• Setup instructions\n• Support contact information\n• License key and documentation');
+                closePurchaseModal();
+            }, 2000);
+        }
+
+        // Close modals on outside click
+        document.getElementById('purchaseModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePurchaseModal();
+            }
+        });
+
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-lg');
+            } else {
+                nav.classList.remove('shadow-lg');
+            }
+        });
+
+        // Add loading animation for buttons
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', function() {
+                if (this.onclick || this.getAttribute('onclick')) {
+                    this.style.opacity = '0.7';
+                    setTimeout(() => {
+                        this.style.opacity = '1';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

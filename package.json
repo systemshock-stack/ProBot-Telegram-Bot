@@ -1,0 +1,30 @@
+{
+  "name": "probot-telegram-package",
+  "version": "1.0.0",
+  "description": "Professional Telegram Bot Package - Complete solution for developers and entrepreneurs",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "dev": "python -m http.server 8000",
+    "build": "echo 'Static site ready for deployment'",
+    "deploy": "echo 'Deploy to your hosting platform'"
+  },
+  "keywords": [
+    "telegram",
+    "bot",
+    "python",
+    "business",
+    "automation",
+    "resale",
+    "package"
+  ],
+  "author": "ProBot Team",
+  "license": "Commercial",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/probot/telegram-package"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
